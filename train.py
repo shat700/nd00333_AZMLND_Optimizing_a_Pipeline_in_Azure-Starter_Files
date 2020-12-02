@@ -12,17 +12,13 @@ from azureml.data.dataset_factory import TabularDatasetFactory
 
 # TODO: Create TabularDataset using TabularDatasetFactory
 # Data is located at:
-# "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv"
+#"https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv"
 
-ds= #T
 
-x, y = clean_data(ds)
-
-# TODO: Split data into train and test sets.
 
 ### YOUR CODE HERE ###a
 
-run = Run.get_context()
+
 
 def clean_data(data):
     # Dict for cleaning data
@@ -49,7 +45,15 @@ def clean_data(data):
     x_df["poutcome"] = x_df.poutcome.apply(lambda s: 1 if s == "success" else 0)
 
     y_df = x_df.pop("y").apply(lambda s: 1 if s == "yes" else 0)
-    
+    return x_df, y_df
+
+ds= TabularDatasetFactory.from_delimited_files(path=url)
+
+x, y = clean_data(ds)
+
+# TODO: Split data into train and test sets.
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.3,random_state=42)
+run = Run.get_context(allow_offline=True)
 
 def main():
     # Add arguments to script
