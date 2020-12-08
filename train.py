@@ -12,7 +12,7 @@ from azureml.data.dataset_factory import TabularDatasetFactory
 
 # TODO: Create TabularDataset using TabularDatasetFactory
 # Data is located at:
-#"https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv"
+ds_path="https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv"
 
 
 
@@ -47,7 +47,7 @@ def clean_data(data):
     y_df = x_df.pop("y").apply(lambda s: 1 if s == "yes" else 0)
     return x_df, y_df
 
-ds= TabularDatasetFactory.from_delimited_files(path=url)
+ds= TabularDatasetFactory.from_delimited_files(path=ds_path)
 
 x, y = clean_data(ds)
 
@@ -74,3 +74,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+    #os.makedirs('./outputs',exist_ok=True)
+    #joblib.dump(value=model,filename='./outputs/hd-model.joblib')
