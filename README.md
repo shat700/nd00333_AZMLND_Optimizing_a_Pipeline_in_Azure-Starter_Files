@@ -1,4 +1,4 @@
-# Optimizing an ML Pipeline in Azure
+# Optimizing an ML Pipeline in Az
 
 ## Overview
 This project is part of the Udacity Azure ML Nanodegree.
@@ -14,9 +14,11 @@ The best performing model was a VotingEnsemble obtained through AutoML with the 
 
 ## Scikit-learn Pipeline
 **Explain the pipeline architecture, including data, hyperparameter tuning, and classification algorithm.**
-In this scikit-learn pipeline a workspace and a curated environment were initialized followed by configuring the training run by creating a HyperDriveConfig and AutoMLConfig for comparison. Finally the run was submitted and the best model was saved and registered. The dataset is tabular which is imported from a URL in the training script. The data is one hot encoded 
+In this scikit-learn pipeline a workspace and a curated environment were initialized followed by configuring the training run by creating a HyperDriveConfig and AutoMLConfig for comparison. Finally the run was submitted and the best model was saved and registered. The dataset is tabular which is imported from a URL in the training script. The data is one hot encoded and split into train and test sets. Further the hyperparameters such as C value and maximum number of iterations are set. Accuracy is chosen as the primary metric and logistic regression is the algorithm applied to obtain the best run. Logistic Regression is a Machine Learning classification algorithm that is used to predict the
+probability of a categorical dependent variable. In logistic regression, the dependent variable (y) is a binary variable.
 
 **What are the benefits of the parameter sampler you chose?**
+
 
 **What are the benefits of the early stopping policy you chose?**
 
