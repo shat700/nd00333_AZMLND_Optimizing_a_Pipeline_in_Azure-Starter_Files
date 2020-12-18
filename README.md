@@ -1,4 +1,4 @@
-**Optimizing an ML Pipeline in Azure for prediction of Fixed Deposit
+*Optimizing an ML Pipeline in Azure for prediction of Fixed Deposit
 
 **Overview
 
