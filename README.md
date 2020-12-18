@@ -14,6 +14,7 @@ The best performing model was a VotingEnsemble obtained through AutoML with the 
 
 ## Scikit-learn Pipeline
 **Explain the pipeline architecture, including data, hyperparameter tuning, and classification algorithm.**
+In this scikit-learn pipeline a workspace and a curated environment were initialized followed by configuring the training run by creating a HyperDriveConfig and AutoMLConfig for comparison. Finally the run was submitted and the best model was saved and registered. The dataset is tabular which is imported from a URL in the training script. The data is one hot encoded 
 
 **What are the benefits of the parameter sampler you chose?**
 
