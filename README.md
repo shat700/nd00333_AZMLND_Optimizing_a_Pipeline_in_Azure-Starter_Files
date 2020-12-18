@@ -1,11 +1,13 @@
 Optimizing an ML Pipeline in Azure for prediction of Fixed Deposit
 
-Overview
+##Overview
+
 This project is part of the Udacity Azure ML Nanodegree.
 In this project, we build and optimize an Azure ML pipeline using the Python SDK and a provided Scikit-learn model.
 This model is then compared to an Azure AutoML run.
 
 Summary
+
 This dataset contains data about bank marketing. With the focus on data of the number of times a client was contacted for the campaign, the history of contact, job, loan and housing we seek to predict whether the client opted for a bank deposit or not.
 The best performing model was a VotingEnsemble obtained through AutoML with the primary metric accuracy as '0.916570'. 
 
